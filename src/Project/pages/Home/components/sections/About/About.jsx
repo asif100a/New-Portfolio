@@ -17,13 +17,13 @@ const About = () => {
                     <div className="flex lg:flex-row flex-col lg:gap-12 gap-6">
                         {/* Development Image */}
                         <div>
-                            <img src={web_developmentImg} alt="" className="lg:pt-12 pt-2 w-[430px] h-[230px] lg:w-auto lg:h-auto" />
+                            <img src={web_developmentImg.src} alt="" className="lg:pt-12 pt-2 w-[430px] h-[230px] lg:w-auto lg:h-auto" />
                         </div>
                         {/* About Me content */}
                         <div>
                             <div>
                                 {/* My image */}
-                                <img src={roundImg} alt="N.M. Asif Sheikh" className="h-40" />
+                                <img src={roundImg.src} alt="N.M. Asif Sheikh" className="h-40" />
                             </div>
                             <div className="my-6 space-y-3">
                                 <h4 className="text-xl font-medium mb-3">Hi! there,</h4>

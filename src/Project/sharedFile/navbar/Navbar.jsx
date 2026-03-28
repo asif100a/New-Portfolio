@@ -2,7 +2,7 @@ import { Link } from "react-scroll";
 import { CgMenuRound } from "react-icons/cg";
 import { items } from "../../../utils/utils";
 import { useEffect, useState, useCallback } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { RxCrossCircled } from "react-icons/rx";
 
 const Navbar = ({ isIntersecting }) => {
@@ -14,10 +14,8 @@ const Navbar = ({ isIntersecting }) => {
         const currentScrollY = window.scrollY;
 
         if (currentScrollY > lastScrollY && currentScrollY > 100) {
-            // Scrolling down and past 100px - hide navbar
             setIsVisible(false);
         } else if (currentScrollY < lastScrollY) {
-            // Scrolling up - show navbar
             setIsVisible(true);
         }
 
@@ -25,64 +23,66 @@ const Navbar = ({ isIntersecting }) => {
     }, [lastScrollY]);
 
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
     }, [handleScroll]);
 
-    const navItems = <>
-        {
-            items.map((item, i) => (
-                <li key={i} className="cursor-pointer font-medium font-text-lora text-base gradient-btn text-nowrap">
-                    <Link to={item?.path} smooth={true} duration={600}>
-                        <button onClick={() => setShowDropdown(false)}>{item?.title}</button>
-                    </Link>
-                </li>
-            ))
-        }
-    </>;
+    const navItems = items.map((item, i) => (
+        <li key={i}>
+            <Link
+                to={item.path}
+                smooth={true}
+                duration={600}
+                offset={-96}
+                className="cursor-pointer text-sm font-semibold tracking-[0.18em] text-slate-300 transition hover:text-white"
+            >
+                <button onClick={() => setShowDropdown(false)}>{item.title}</button>
+            </Link>
+        </li>
+    ));
 
     return (
-        <header className={`w-full h-fit bg-[#0d1117] relative`}>
-            <div className={`w-full px-0 md:px-6 xl:px-28 pt-3 lg:pt-6 fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
-                <div className="w-full h-fit px-3 md:px-4 py-2 md:py-4 gradient-border-nav">
-                    <div className="flex justify-between items-center">
-                        <h3 className="sm:text-3xl text-xl font-semibold gradient-text ml-3 text-nowrap">React/React Native Developer</h3>
-                        <nav className="text-white relative">
-                            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                                {showDropdown ? (
-                                    <RxCrossCircled
-                                        onClick={() => setShowDropdown(false)}
-                                        className="text-[#eea75b] text-2xl"
-                                    />
-                                ) : (
-                                    <CgMenuRound
-                                        onClick={() => setShowDropdown(true)}
-                                        className="text-[#eea75b] text-2xl"
-                                    />
-                                )}
-                            </div>
-
-                            {!isIntersecting && (
-                                <ul className="hidden lg:flex items-center gap-3 lg:gap-4 xl:gap-6">
-                                    {navItems}
-                                </ul>
-                            )}
-
-                            <ul
-                                tabIndex={0}
-                                className={`lg:hidden ${showDropdown ? 'block' : 'hidden'} absolute right-0 space-y-3 bg-transparent backdrop-blur-md p-4 rounded-md shadow-sm`}
-                            >
-                                {navItems}
-                            </ul>
-                        </nav>
-
-                        <div className="hidden lg:flex">
-                            <Link to="contact" smooth={true} duration={600}>
-                                <button className="btn btn-sm text-lg font-medium px-6 h-10 min-h-10 bg-white hover:bg-white shadow-none border-none bg-gradient-to-r from-[#fb7185] to-[#eea75b] text-white hover:bg-gradient-to-r hover:from-[#fb7185] hover:to-[#eea75b] rounded-3xl">Contact Me</button>
-                            </Link>
-                        </div>
+        <header className="relative">
+            <div className={`fixed inset-x-0 top-0 z-50 transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"}`}>
+                <div className="mx-auto mt-4 flex max-w-6xl items-center justify-between rounded-full border border-white/10 bg-slate-950/70 px-4 py-3 shadow-[0_18px_60px_rgba(4,10,22,0.45)] backdrop-blur xl:px-6">
+                    <div className="min-w-0">
+                        <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-sky-200/80">Portfolio</p>
+                        <h3 className="truncate font-text-lora text-lg text-white sm:text-xl">N.M. Asif Sheikh</h3>
                     </div>
 
+                    <nav className="relative text-white">
+                        <div tabIndex={0} role="button" className="rounded-full border border-white/10 bg-white/5 p-2 lg:hidden">
+                            {showDropdown ? (
+                                <RxCrossCircled onClick={() => setShowDropdown(false)} className="text-2xl text-sky-200" />
+                            ) : (
+                                <CgMenuRound onClick={() => setShowDropdown(true)} className="text-2xl text-sky-200" />
+                            )}
+                        </div>
+
+                        {!isIntersecting && <ul className="hidden items-center gap-6 lg:flex">{navItems}</ul>}
+
+                        <ul
+                            tabIndex={0}
+                            className={`absolute right-0 top-14 w-56 space-y-3 rounded-3xl border border-white/10 bg-slate-950/95 p-5 shadow-2xl backdrop-blur lg:hidden ${showDropdown ? "block" : "hidden"}`}
+                        >
+                            {navItems}
+                        </ul>
+                    </nav>
+
+                    <div className="hidden lg:flex lg:items-center lg:gap-3">
+                        <a
+                            href="/N.M._Asif_Sheikh_Junior_Fullstack_Engineer.pdf"
+                            download
+                            className="rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:border-sky-300/50 hover:text-white"
+                        >
+                            Resume
+                        </a>
+                        <Link to="contact" smooth={true} duration={600} offset={-96}>
+                            <button className="rounded-full bg-[linear-gradient(135deg,#9cc2ff_0%,#6ddad3_100%)] px-5 py-2 text-sm font-bold text-slate-950 transition hover:scale-[1.02]">
+                                Contact
+                            </button>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </header>
@@ -90,7 +90,7 @@ const Navbar = ({ isIntersecting }) => {
 };
 
 Navbar.propTypes = {
-    isIntersecting: PropTypes.bool.isRequired
+    isIntersecting: PropTypes.bool.isRequired,
 };
 
 export default Navbar;

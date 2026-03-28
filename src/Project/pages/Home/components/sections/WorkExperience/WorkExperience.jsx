@@ -28,17 +28,17 @@ const WorkExperience = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-row gap-6 mt-6'>
                 <img
-                    src={projectPhoto1}
+                    src={projectPhoto1.src}
                     alt="Intern-project-1"
                     className='w-full lg:w-72 h-auto lg:h-40 rounded-md'
                 />
                 <img
-                    src={projectPhoto2}
+                    src={projectPhoto2.src}
                     alt="Intern-project-2a"
                     className='w-full lg:w-72 h-auto lg:h-40 rounded-md'
                 />
                 <img
-                    src={projectPhoto3}
+                    src={projectPhoto3.src}
                     alt="Intern-project-2b"
                     className='w-full lg:w-72 h-auto lg:h-40 rounded-md'
                 />

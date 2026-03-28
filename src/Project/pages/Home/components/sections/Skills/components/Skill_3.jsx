@@ -63,7 +63,7 @@ const Skill_3 = () => {
                 animate={controls}
                 variants={rightVarients}
             >
-                <img src={skill_3} alt="Skill photo 3" className="w-full md:w-[520px] lg:w-[420px] h-[272px]" />
+                <img src={skill_3.src} alt="Skill photo 3" className="w-full md:w-[520px] lg:w-[420px] h-[272px]" />
             </motion.div>
         </div>
     );

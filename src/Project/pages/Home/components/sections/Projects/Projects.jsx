@@ -13,7 +13,7 @@ const Projects = () => {
                 <div className="grid grid-cols-1 gap-8 mt-8 ">
                     {projects.map((project, index) => (
                         <div key={index} className="overflow-hidden bg-cover rounded-lg lg:h-96 h-auto group text-white"
-                            style={{ backgroundImage: `url(${project.showImage})` }}>
+                            style={{ backgroundImage: `url(${project.showImage.src})` }}>
                             <div
                                 className="flex flex-col justify-center w-full h-full md:px-24 px-3 py-4 transition-opacity duration-700 opacity-0 backdrop-blur-sm bg-gray-800/60 group-hover:opacity-100">
 
@@ -73,7 +73,7 @@ const projects = [
             'After logging in or registering, users can create donation requests.',
             'Logged-in users can manage their donation requests by updating or deleting them',
         ],
-        showImage: `${bloodDonorImg}`,
+        showImage: bloodDonorImg,
         liveDemo: 'https://blood-donator-unity.web.app/',
         sourceCode: 'https://github.com/asif100a/Blood-Donor-Unity',
     },
@@ -87,7 +87,7 @@ const projects = [
             'Logged-in users can update any assignment if needed',
             "Users can give marks on others' submitted assignments but cannot mark their own submissions",
         ],
-        showImage: `${assignmentImg}`,
+        showImage: assignmentImg,
         liveDemo: 'https://assignment-11-9bd1a.web.app/',
         sourceCode: 'https://github.com/asif100a/Assignment-genius',
     },
@@ -101,7 +101,7 @@ const projects = [
             'The "All Tourist Spots" page allows users to view tourist spots without signing in',
             'Users can find tourist spots by selecting a country name.',
         ],
-        showImage: `${awesomeTouristImg}`,
+        showImage: awesomeTouristImg,
         liveDemo: 'https://assignment-10-49aa1.web.app/',
         sourceCode: 'https://github.com/asif100a/Awesome-tourist-spots',
     },

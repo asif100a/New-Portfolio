@@ -63,7 +63,7 @@ const Skill_1 = () => {
                 initial="hidden"
                 animate={controls}
             >
-                <img src={skill_1} alt="Skill photo 1" className="w-full md:w-[520px] lg:w-[420px] h-[272px]" />
+                <img src={skill_1.src} alt="Skill photo 1" className="w-full md:w-[520px] lg:w-[420px] h-[272px]" />
             </motion.div>
         </div>
     );

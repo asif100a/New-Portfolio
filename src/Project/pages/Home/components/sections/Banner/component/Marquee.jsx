@@ -17,20 +17,20 @@ const Marquee = () => {
     return (
         <div className='marquee-container mt-6 md:mt-12'>
             <div className='marquee-content'>
-                <img src={ReactLogo} alt="React" />
-                <img src={ReactNativeLogo} alt="React Native" />
-                <img src={NextLogo} alt="NextJS" />
-                <img src={JavaScriptLogo} alt="JavaScript" />
-                <img src={TypeScriptLogo} alt="TypeScript" />
-                <img src={HTMLLogo} alt="HTML" />
-                <img src={CSSLogo} alt="CSS" />
-                <img src={TailwindCSSLogo} alt="Tailwind CSS" />
-                <img src={ReduxLogo} alt="Redux" />
-                <img src={NodeJSLogo} alt="Node JS" />
-                <img src={ExpressJSLogo} alt="Express JS" />
-                <img src={MongoDBLogo} alt="MongoDB" />
-                <img src={GithubLogo} alt="Github" />
-                <img src={FirebaseLogo} alt="Firebase" />
+                <img src={ReactLogo.src} alt="React" />
+                <img src={ReactNativeLogo.src} alt="React Native" />
+                <img src={NextLogo.src} alt="NextJS" />
+                <img src={JavaScriptLogo.src} alt="JavaScript" />
+                <img src={TypeScriptLogo.src} alt="TypeScript" />
+                <img src={HTMLLogo.src} alt="HTML" />
+                <img src={CSSLogo.src} alt="CSS" />
+                <img src={TailwindCSSLogo.src} alt="Tailwind CSS" />
+                <img src={ReduxLogo.src} alt="Redux" />
+                <img src={NodeJSLogo.src} alt="Node JS" />
+                <img src={ExpressJSLogo.src} alt="Express JS" />
+                <img src={MongoDBLogo.src} alt="MongoDB" />
+                <img src={GithubLogo.src} alt="Github" />
+                <img src={FirebaseLogo.src} alt="Firebase" />
             </div>
         </div>
     );

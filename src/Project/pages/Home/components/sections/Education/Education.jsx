@@ -20,7 +20,7 @@ const Education = () => {
                 </div>
                 <div className='flex gap-0 lg:gap-12 lg:flex-row flex-col lg:items-center items-start lg:space-y-0 space-y-6 lg:mt-12 mt-10'>
                     <div>
-                        <img src={webLearner} alt="" className='md:w-[27rem] lg:h-auto md:h-56 w-auto h-auto' />
+                        <img src={webLearner.src} alt="" className='md:w-[27rem] lg:h-auto md:h-56 w-auto h-auto' />
                     </div>
                     <div>
                         {educationData.map((edu, index) => (
