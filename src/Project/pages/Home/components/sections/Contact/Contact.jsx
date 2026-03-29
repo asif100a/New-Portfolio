@@ -1,99 +1,84 @@
 import { useRef } from "react";
-import { CiLinkedin } from "react-icons/ci";
-import { MdWhatsapp } from "react-icons/md";
-import { VscGithub } from "react-icons/vsc";
-import toast, { Toaster } from 'react-hot-toast';
-import emailjs from '@emailjs/browser';
-import ContactForm from "./conponents/ContactForm";
+import toast, { Toaster } from "react-hot-toast";
+import emailjs from "@emailjs/browser";
+import ContactForm from "./ContactForm";
+
+const contacts = [
+    {
+        title: "Email",
+        description: "For project discussions, collaboration, and opportunities.",
+        content: "nmasifsheikh2003@gmail.com",
+        href: "mailto:nmasifsheikh2003@gmail.com",
+    },
+    {
+        title: "LinkedIn",
+        description: "Career profile and recent work updates.",
+        content: "linkedin.com/in/nm-asif-sheikh",
+        href: "https://www.linkedin.com/in/nm-asif-sheikh/",
+    },
+    {
+        title: "GitHub",
+        description: "Code samples, repositories, and side projects.",
+        content: "github.com/asif100a",
+        href: "https://github.com/asif100a",
+    },
+    {
+        title: "WhatsApp",
+        description: "Quick contact for direct communication.",
+        content: "+88 01608-898811",
+        href: "https://wa.link/l3yb8x",
+    },
+];
 
 const Contact = () => {
     const form = useRef();
 
-    // Send the message
     const sendEmail = (e) => {
         e.preventDefault();
 
         emailjs
-            .sendForm('service_gsyvmua', 'template_3shoy0h', form.current, {
-                publicKey: 'M8ZdPyX2WzkQORfB8',
+            .sendForm("service_gsyvmua", "template_3shoy0h", form.current, {
+                publicKey: "M8ZdPyX2WzkQORfB8",
             })
             .then(
                 () => {
-                    // console.log('SUCCESS!');
-                    toast.success('Message has sent successfully');
+                    toast.success("Message has sent successfully");
                 },
                 (error) => {
-                    console.error('FAILED...', error.text);
-                    toast.error('Failed to sent message');
+                    console.error("FAILED...", error.text);
+                    toast.error("Failed to sent message");
                 },
             );
     };
 
     return (
-        <section id="contact" className="mt-16 pb-12 xl:mx-32 md:mx-6 mx-3">
-            <div className="container mx-auto">
-                <div>
-                    <div className="w-fit px-6 py-2 border border-gray-400 rounded-lg shadow-lg">
-                        <h1 className="text-4xl font-semibold">📬 Contact Me</h1>
-                    </div>
-
-                    <div className="mt-6">
-                        <h1 className="mt-2 text-xl font-semibold md:text-2xl">{"Let's"} Connect!</h1>
-
-                        <p className="mt-3 lg:w-[36rem] w-auto">{"I'm"} always open to new opportunities and collaborations. Feel free to reach out to me through the form below or connect with me on social media.</p>
-                    </div>
-                </div>
-
-                <div className="grid grid-cols-1 gap-12 mt-10 lg:grid-cols-2">
-                    <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
-                        <div>
-                            <span className="inline-block p-2 rounded-full gradient-background">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-7 h-7">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                                </svg>
-                            </span>
-
-                            <h2 className="mt-4 text-base font-medium">Email</h2>
-                            <p className="mt-2 text-sm">Contact me vai email.</p>
-                            <a href="mailto:nmasifsheikh2003@gmail.com" target="_blank" rel="noreferrer" className="mt-2 text-sm text-[#eea75b]">nmasifsheikh2003@gmail.com</a>
-                        </div>
-
-                        <div>
-                            <span className="inline-block p-2 rounded-full gradient-background dark:bg-gray-800">
-                                <CiLinkedin className="w-8 h-8 text-white" />
-                            </span>
-
-                            <h2 className="mt-4 text-base font-medium">Linked in</h2>
-                            <p className="mt-2 text-sm">Contact and explore my linked in profile.</p>
-                            <a href="https://www.linkedin.com/in/nm-asif-sheikh/" target="_blank" rel="noreferrer" className="mt-2 text-sm text-[#eea75b]">Linked in profile</a>
-                        </div>
-
-                        <div>
-                            <span className="inline-block p-2 text-[#eea75b] rounded-full gradient-background dark:bg-gray-800">
-                                <VscGithub className="w-7 h-7 text-white" />
-                            </span>
-
-                            <h2 className="mt-4 text-base font-medium">Github</h2>
-                            <p className="mt-2 text-sm">Check my github account and contact me.</p>
-                            <a href="https://github.com/asif100a" target="_blank" rel="noreferrer" className="mt-2 text-sm text-[#eea75b]">Github account</a>
-                        </div>
-
-                        <div>
-                            <span className="inline-block p-2 text-[#eea75b] rounded-full gradient-background dark:bg-gray-800">
-                                <MdWhatsapp className="w-8 h-8 text-white" />
-                            </span>
-
-                            <h2 className="mt-4 text-base font-medium">{"What's"} app</h2>
-                            <p className="mt-2 text-sm">Direct call or {"What's"} app:</p>
-                            <a href="https://wa.link/l3yb8x" target="_blank" rel="noreferrer" className="mt-2 text-sm text-[#eea75b]">+88 01608-898811</a>
+        <section id="contact" className="px-4 py-10 pb-16 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-6xl rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-[0_20px_70px_rgba(2,8,20,0.28)] lg:p-8">
+                <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+                    <div>
+                        <p className="text-sm font-semibold uppercase tracking-[0.32em] text-sky-200/70">Contact</p>
+                        <h2 className="mt-4 font-text-lora text-3xl text-white sm:text-4xl">Let&apos;s build something thoughtful and high quality.</h2>
+                        <p className="mt-4 max-w-xl text-base leading-8 text-slate-300">
+                            I&apos;m open to new opportunities, freelance collaborations, and product-focused conversations. Reach out through the form or connect through the channels below.
+                        </p>
+                        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                            {contacts.map((item) => (
+                                <a
+                                    key={item.title}
+                                    href={item.href}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="rounded-[1.5rem] border border-white/10 bg-slate-950/45 p-5 transition hover:border-sky-300/40 hover:bg-slate-950/60"
+                                >
+                                    <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                                    <p className="mt-2 text-sm leading-7 text-slate-300">{item.description}</p>
+                                    <p className="mt-4 text-sm font-semibold text-sky-100">{item.content}</p>
+                                </a>
+                            ))}
                         </div>
                     </div>
-
-                    <div className="p-4 rounded-lg bg-[#0d1117] text-white img-gradient-border md:p-8">
-                        <ContactForm
-                            form={form}
-                            sendEmail={sendEmail}
-                        />
+                    <div className="rounded-[1.75rem] border border-white/10 bg-slate-950/45 p-4 md:p-6">
+                        <ContactForm form={form} sendEmail={sendEmail} />
                     </div>
                 </div>
             </div>

@@ -1,71 +1,84 @@
 import { useState } from "react";
 import roundImg from "../../../../../../assets/asif_round.png";
-import web_developmentImg from "../../../../../../assets/web-development.jpeg";
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-// import 'react-tabs/style/react-tabs.css';
+import webDevelopmentImg from "../../../../../../assets/web-development.jpeg";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+
+const strengths = [
+    {
+        title: "Product-minded engineering",
+        description: "I approach frontend and backend work with usability, maintainability, and business outcomes in mind.",
+    },
+    {
+        title: "Modern web stack",
+        description: "My day-to-day toolkit includes Next.js, React, TypeScript, Tailwind CSS, Node.js, Express.js, and MongoDB.",
+    },
+    {
+        title: "Reliable collaboration",
+        description: "I enjoy turning requirements into clear deliverables, improving interfaces, and shipping work with attention to detail.",
+    },
+];
 
 const About = () => {
     const [tabIndex, setTabIndex] = useState(0);
 
     return (
-        <section id="about" className="my-16 xl:mx-32 md:mx-6 mx-3">
-            <div className="">
-                <div className="w-fit px-6 py-2 border border-gray-400 rounded-lg shadow-lg">
-                    <h1 className="text-4xl font-semibold">🏠 About Me</h1>
+        <section id="about" className="px-4 py-10 sm:px-6 lg:px-8">
+            <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.92fr_1.08fr]">
+                <div className="rounded-[2rem] border border-white/10 bg-white/5 p-5 shadow-[0_20px_70px_rgba(2,8,20,0.28)]">
+                    <img src={webDevelopmentImg.src} alt="Workspace and web development illustration" className="h-56 w-full rounded-[1.5rem] object-cover" />
+                    <div className="mt-5 flex items-center gap-4 rounded-[1.5rem] border border-white/10 bg-slate-950/50 p-4">
+                        <img src={roundImg.src} alt="N.M. Asif Sheikh" className="h-20 w-20 rounded-2xl object-cover" />
+                        <div>
+                            <p className="text-xs uppercase tracking-[0.28em] text-slate-400">About</p>
+                            <h2 className="mt-1 font-text-lora text-2xl text-white">Building dependable digital experiences</h2>
+                            <p className="mt-2 text-sm leading-7 text-slate-300">Focused on clean interfaces, scalable architecture, and delivery that feels polished in production.</p>
+                        </div>
+                    </div>
                 </div>
-                <div className="my-6">
-                    <div className="flex lg:flex-row flex-col lg:gap-12 gap-6">
-                        {/* Development Image */}
-                        <div>
-                            <img src={web_developmentImg.src} alt="" className="lg:pt-12 pt-2 w-[430px] h-[230px] lg:w-auto lg:h-auto" />
-                        </div>
-                        {/* About Me content */}
-                        <div>
-                            <div>
-                                {/* My image */}
-                                <img src={roundImg.src} alt="N.M. Asif Sheikh" className="h-40" />
+                <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-[0_20px_70px_rgba(2,8,20,0.28)]">
+                    <p className="text-sm font-semibold uppercase tracking-[0.32em] text-sky-200/70">About Me</p>
+                    <h2 className="mt-4 max-w-2xl font-text-lora text-3xl text-white sm:text-4xl">I help teams turn ideas into polished, maintainable web products.</h2>
+                    <div className="mt-6 space-y-4 text-base leading-8 text-slate-300">
+                        <p>I&apos;m N.M. Asif Sheikh, a fullstack engineer with hands-on experience building production-ready applications, currently contributing as a Fullstack Engineer Intern at NxtVis.</p>
+                        <p>My work spans responsive frontend experiences, scalable backend services, and the practical decisions that help a product feel reliable once it leaves the prototype stage.</p>
+                    </div>
+                    <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                        {strengths.map((strength) => (
+                            <div key={strength.title} className="rounded-3xl border border-white/10 bg-slate-950/45 p-5">
+                                <h3 className="text-lg font-semibold text-white">{strength.title}</h3>
+                                <p className="mt-3 text-sm leading-7 text-slate-300">{strength.description}</p>
                             </div>
-                            <div className="my-6 space-y-3">
-                                <h4 className="text-xl font-medium mb-3">Hi! there,</h4>
-                                <p className="xl:w-[42rem] lg:w-[32rem] md:w-full w-auto">Hi, I’m N.M. Asif Sheikh, a passionate Fullstack Engineer with real-world experience in building scalable and user-friendly web applications. Currently, I’ve worked as a Fullstack Engineer Intern at NxtVis, where I’ve been deeply involved in developing production-ready applications from the ground up.</p>
-                                <p>I specialize in both front-end and back-end technologies including React, Next.js, TypeScript, Tailwind CSS, Node.js, Express.js, and MongoDB. During my internship, I’ve worked on various impactful projects.</p>
+                        ))}
+                    </div>
+                    <div className="mt-8">
+                        <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)} selectedTabClassName="!border-sky-300/60 !bg-sky-300/10 !text-white">
+                            <TabList className="flex flex-wrap gap-3">
+                                <Tab className="rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-slate-300">Capabilities</Tab>
+                                <Tab className="rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-slate-300">Interests</Tab>
+                                <Tab className="rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-slate-300">Collaboration</Tab>
+                            </TabList>
+                            <div className="mt-6 rounded-[1.5rem] border border-white/10 bg-slate-950/40 p-6">
+                                <TabPanel>
+                                    <ul className="grid gap-3 text-sm leading-7 text-slate-300 sm:grid-cols-2">
+                                        <li>React, Next.js, TypeScript, and Tailwind CSS</li>
+                                        <li>Node.js, Express.js, and MongoDB</li>
+                                        <li>Responsive UI systems and polished interactions</li>
+                                        <li>REST API integration and fullstack product delivery</li>
+                                    </ul>
+                                </TabPanel>
+                                <TabPanel>
+                                    <p className="text-sm leading-7 text-slate-300">I enjoy exploring modern product design, improving developer workflow, and learning the technologies that make web applications faster, clearer, and easier to maintain.</p>
+                                </TabPanel>
+                                <TabPanel>
+                                    <p className="text-sm leading-7 text-slate-300">I work best in teams that value clarity, iteration, and thoughtful execution. I&apos;m open to opportunities where I can contribute both technical depth and product sensibility.</p>
+                                </TabPanel>
                             </div>
-
-                            <div>
-                                <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)} selectedTabClassName="custom-style">
-                                    <TabList className={'flex gap-6 hover:cursor-pointer pb-3'}>
-                                        <Tab className={'border-2 border-transparent px-3 py-1'}>Skills</Tab>
-                                        <Tab className={'border-2 border-transparent px-3 py-1'}>Interests</Tab>
-                                        <Tab className={'border-2 border-transparent px-3 py-1'}>Get in Touch</Tab>
-                                    </TabList>
-
-                                    <TabPanel>
-                                        <ul className="list-disc ml-12">
-                                            <li>HTML, CSS, JavaScript</li>
-                                            <li>React, Next.js, TypeScript, Tailwind CSS</li>
-                                            <li>Node.js, Express.js, MongoDB</li>
-                                            <li>Responsive Design</li>
-                                            <li>Version Control (Git)</li>
-                                            <li>UI/UX Principles</li>
-                                        </ul>
-                                    </TabPanel>
-                                    <TabPanel>
-                                        <div>
-                                            <p className="w-full sm:w-[24rem]">I interest to write code and exploring new technologies.  When {"I'm"} not coding, I enjoy reading books, exploring youtube or google to improve my skills, and doing personal works. I believe that a balanced life fuels creativity and productivity.</p>
-                                        </div>
-                                    </TabPanel>
-                                    <TabPanel>
-                                        <p className="w-full sm:w-[24rem]">{"I'm"} always open to new opportunities and collaborations. Feel free to <a href="mailto:nmasifsheikh2003@gmail.com" className="text-[#eea75b] hover:underline">contact me</a> or connect with me on <a href="https://www.linkedin.com/in/nm-asif-sheikh" target="_blank" className="text-[#eea75b] hover:underline">LinkedIn</a>.</p>
-                                        <p className="mt-2 pb-3">{"Let's"} create something amazing together!</p>
-                                    </TabPanel>
-                                </Tabs>
-                            </div>
-                        </div>
+                        </Tabs>
                     </div>
                 </div>
             </div>
         </section>
     );
-}
+};
 
 export default About;

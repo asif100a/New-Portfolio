@@ -1,99 +1,83 @@
-import { SlSettings } from "react-icons/sl";
-import codingLaptop from "../../../../../../assets/Coding-laptop.png";
-import DownloadResume from "../../UI/downloadResume/DownloadResume";
+import { HiArrowRight, HiOutlineBriefcase, HiOutlineEnvelope, HiOutlineSparkles } from "react-icons/hi2";
+import profilePhoto from "../../../../../../assets/asif.png";
 import { Link } from "react-scroll";
-import Marquee from "./component/Marquee";
-import { items } from "../../../../../../utils/utils";
 import PropTypes from "prop-types";
-import GradientBorderBtn from "../../UI/buttons/GradientBorderBtn";
 
 const Banner = ({ sectionRef }) => {
-    const navItems1 = <>
-        {
-            items.slice(0, 4).map((item, i) => (
-                <li key={i}>
-                    <Link to={item?.path} smooth={true} duration={600}>
-                        <GradientBorderBtn text={item.title} type={'link'} />
-                    </Link>
-                </li>
-            ))
-        }
-    </>;
-    const navItems2 = <>
-        {
-            items.slice(4).map((item, i) => (
-                <li key={i}>
-                    <Link to={item?.path} smooth={true} duration={600}>
-                        <GradientBorderBtn text={item.title} type={'link'} />
-                    </Link>
-                </li>
-            ))
-        }
-    </>;
-
     return (
-        // <section className="w-auto h-full banner-background">
-        <section className="pt-20 lg:pt-16 w-auto h-full relative">
-            <div className="hidden lg:block absolute top-28 right-40 z-0 w-52 h-52 bg-amber-200 border-2 border-amber-100 rounded-full blur-3xl"></div>
-            <div className="hidden lg:block absolute top-[392px] left-80 z-0 w-52 h-52 bg-cyan-300 border-2 border-cyan-100 rounded-full blur-3xl"></div>
-
-            <div className="w-auto h-full">
-                {/* Icon and Welcome */}
-                <div className="flex items-start justify-center gap-6 lg:gap-10 py-0 pt-8 lg:py-12 px-3 md:px-6 xl:px-32">
-                    <SlSettings className="w-10 md:w-14 lg:w-14 xl:w-20 h-10 md:h-14 lg:h-14 xl:h-20 text-[#fb7185] rounded-full rotate-animation" />
-                    <div className="text-4xl md:text-5xl lg:text-5xl xl:text-7xl font-bold md:flex md:flex-row justify-start gap-6 z-10">
-                        <h1 className="gradient-text font-text-lora">Welcome to</h1>
-                        <div className="hidden lg:block">
-                            <h1 className="jacques-francois-shadow gradient-text appear-disappear">N.M. Asif Sheikh</h1>
-                            <p className="text-sm md:text-base lg:text-xl xl:text-3xl font-semibold font-text-lora bg-gradient-to-r from-rose-400 to-orange-300 px-4 py-1 w-fit rounded-full mt-1">React/React Native Developer</p>
+        <section className="px-4 pb-10 pt-28 sm:px-6 lg:px-8 lg:pt-36">
+            <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+                <div className="space-y-8">
+                    <div className="inline-flex items-center gap-2 rounded-full border border-sky-300/20 bg-sky-300/10 px-4 py-2 text-sm font-semibold text-sky-100">
+                        <HiOutlineSparkles className="text-base" />
+                        Fullstack engineer building polished web products
+                    </div>
+                    <div className="space-y-5">
+                        <p className="text-sm font-semibold uppercase tracking-[0.35em] text-slate-400">N.M. Asif Sheikh</p>
+                        <h1 className="max-w-3xl font-text-lora text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
+                            Portfolio for a developer focused on modern, scalable product experiences.
+                        </h1>
+                        <p className="max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+                            I design and develop thoughtful digital products with React, Next.js, TypeScript, and Node.js,
+                            combining clean frontend execution with dependable backend architecture.
+                        </p>
+                    </div>
+                    <div className="flex flex-col gap-4 sm:flex-row">
+                        <Link to="projects" smooth={true} duration={600} offset={-96}>
+                            <button className="inline-flex items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#9cc2ff_0%,#6ddad3_100%)] px-6 py-3 text-sm font-bold text-slate-950 transition hover:scale-[1.02]">
+                                View Selected Work
+                                <HiArrowRight className="text-base" />
+                            </button>
+                        </Link>
+                        <Link to="contact" smooth={true} duration={600} offset={-96}>
+                            <button className="rounded-full border border-white/12 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-sky-300/50 hover:bg-white/8">
+                                Start a Conversation
+                            </button>
+                        </Link>
+                    </div>
+                    <div ref={sectionRef} className="grid gap-4 sm:grid-cols-3">
+                        <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                            <p className="text-xs uppercase tracking-[0.28em] text-slate-400">Experience</p>
+                            <p className="mt-3 text-2xl font-extrabold text-white">1+ year</p>
+                            <p className="mt-1 text-sm text-slate-300">Production-focused fullstack delivery</p>
+                        </div>
+                        <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                            <p className="text-xs uppercase tracking-[0.28em] text-slate-400">Focus</p>
+                            <p className="mt-3 text-2xl font-extrabold text-white">Next.js</p>
+                            <p className="mt-1 text-sm text-slate-300">App architecture, UI systems, and APIs</p>
+                        </div>
+                        <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                            <p className="text-xs uppercase tracking-[0.28em] text-slate-400">Availability</p>
+                            <p className="mt-3 text-2xl font-extrabold text-white">Open</p>
+                            <p className="mt-1 text-sm text-slate-300">Remote collaboration and freelance work</p>
                         </div>
                     </div>
                 </div>
-                {/* Only for small devices */}
-                <div className="lg:hidden px-3 mt-3 flex flex-col justify-center items-center space-y-1 mb-6">
-                    <h1 className="jacques-francois-shadow gradient-text text-3xl md:text-5xl">N.M. Asif Sheikh</h1>
-                    <p className="text-sm md:text-xl font-semibold font-text-lora bg-gradient-to-r from-rose-400 to-orange-300 px-2 md:px-4 py-1 w-fit rounded-full mt-1">Front-End Developer & UI/UX Enthusiast</p>
-                </div>
-
-                <div className="flex md:flex-row flex-col justify-center items-center gap-6 ">
-                    {/* Code Shower Laptop */}
-                    <div className="block cursor-grab relative w-fit h-fit">
-                        <img src={codingLaptop.src} alt="N.M. Asif Sheikh" className="h-56 md:h-56 xl:h-80 w-[318px] md:w-auto mx-auto" />
-
-                        {/* gif */}
-                        <div className="absolute top-[26px] md:top-[26px] xl:top-[38px] left-[58px] md:left-[60px] xl:left-[86px] flex gap-0">
-                            <div className="bg-[#282828] flex justify-center items-center w-fit h-fit px-[26px] md:px-[31px] xl:px-[46px]">
-                                <iframe
-                                    src="https://giphy.com/embed/xT9IgzoKnwFNmISR8I"
-                                    frameBorder="0"
-                                    className="giphy-embed w-[156px] md:w-[156px] xl:w-[220px] h-[137px] md:h-[137px] xl:h-[195px]"
-                                    allowFullScreen
-                                ></iframe>
+                <div className="relative">
+                    <div className="absolute -inset-6 rounded-[2rem] bg-[linear-gradient(135deg,rgba(112,169,255,0.22),rgba(68,214,203,0.08))] blur-2xl" />
+                    <div className="relative rounded-[2rem] border border-white/10 bg-slate-950/70 p-5 shadow-[0_28px_90px_rgba(3,10,24,0.45)] backdrop-blur">
+                        <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-[linear-gradient(180deg,#16263f_0%,#0e1828_100%)]">
+                            <img src={profilePhoto.src} alt="N.M. Asif Sheikh" className="h-[25rem] w-full object-cover object-top" />
+                        </div>
+                        <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                                <div className="flex items-center gap-3 text-sky-200">
+                                    <HiOutlineBriefcase className="text-lg" />
+                                    <span className="text-sm font-semibold uppercase tracking-[0.22em]">Role</span>
+                                </div>
+                                <p className="mt-3 text-lg font-semibold text-white">Fullstack Engineer Intern</p>
+                                <p className="mt-1 text-sm text-slate-300">Building real-world dashboards and business applications.</p>
+                            </div>
+                            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                                <div className="flex items-center gap-3 text-teal-200">
+                                    <HiOutlineEnvelope className="text-lg" />
+                                    <span className="text-sm font-semibold uppercase tracking-[0.22em]">Contact</span>
+                                </div>
+                                <p className="mt-3 text-lg font-semibold text-white">nmasifsheikh2003@gmail.com</p>
+                                <p className="mt-1 text-sm text-slate-300">Based in Bangladesh, collaborating globally.</p>
                             </div>
                         </div>
                     </div>
-
-                    {/* Developer Showcase */}
-                    <div className="hidden text-white px-3 lg:flex lg:flex-col gap-3 lg:gap-4 xl:gap-6 items-center">
-                        <ul
-                            ref={sectionRef}
-                            className="flex items-center gap-3 lg:gap-4 xl:gap-6"
-                        >
-                            {navItems1}
-                        </ul>
-
-                        <ul className="flex items-center gap-3 lg:gap-4 xl:gap-6">
-                            {navItems2}
-                        </ul>
-
-                        <div className="lg:mt-6 xl:mt-8 md:mt-4 mt-3">
-                            <DownloadResume />
-                        </div>
-                    </div>
-                </div>
-                {/* Technologies Logo */}
-                <div className="px-3 md:px-6 xl:px-32">
-                    <Marquee />
                 </div>
             </div>
         </section>
@@ -101,7 +85,7 @@ const Banner = ({ sectionRef }) => {
 };
 
 Banner.propTypes = {
-    sectionRef: PropTypes.object.isRequired
+    sectionRef: PropTypes.object.isRequired,
 };
 
 export default Banner;

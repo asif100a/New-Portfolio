@@ -1,110 +1,99 @@
-import bloodDonorImg from '../../../../../../assets/blood-donor-unity.png';
-import assignmentImg from '../../../../../../assets/assignment-genius.png';
-import awesomeTouristImg from '../../../../../../assets/awesome-tourist-spots.png';
+import bloodDonorImg from "../../../../../../assets/blood-donor-unity.png";
+import assignmentImg from "../../../../../../assets/assignment-genius.png";
+import awesomeTouristImg from "../../../../../../assets/awesome-tourist-spots.png";
+
+const projects = [
+    {
+        title: "Blood Donor Unity",
+        description: "A platform designed to connect blood donors with people in urgent need, making blood requests faster and easier to manage.",
+        technologies: ["React.js", "Node.js", "Express.js", "MongoDB"],
+        features: [
+            "Users can join the platform as donors by registering.",
+            "Users can search for donors from the donor search page.",
+            "Logged-in users can create, update, and manage donation requests.",
+        ],
+        showImage: bloodDonorImg,
+        liveDemo: "https://blood-donator-unity.web.app/",
+        sourceCode: "https://github.com/asif100a/Blood-Donor-Unity",
+    },
+    {
+        title: "Assignment Genius",
+        description: "An assignment management platform where users can browse, submit, and evaluate coursework through a collaborative workflow.",
+        technologies: ["React", "Tailwind CSS", "Firebase", "JavaScript"],
+        features: [
+            "Users can browse assignments without signing in.",
+            "Authenticated users can take and update assignments.",
+            "Users can mark peers' submitted assignments while protecting against self-marking.",
+        ],
+        showImage: assignmentImg,
+        liveDemo: "https://assignment-11-9bd1a.web.app/",
+        sourceCode: "https://github.com/asif100a/Assignment-genius",
+    },
+    {
+        title: "Awesome Tourist Spots",
+        description: "A travel-focused platform that helps users discover, add, and explore tourist destinations in an approachable way.",
+        technologies: ["React", "Node.js", "Express", "MongoDB"],
+        features: [
+            "Provides easy reference information about tourist spots.",
+            "Users can add new spots after signing in or registering.",
+            "Tourist spots can be filtered by country for easier discovery.",
+        ],
+        showImage: awesomeTouristImg,
+        liveDemo: "https://assignment-10-49aa1.web.app/",
+        sourceCode: "https://github.com/asif100a/Awesome-tourist-spots",
+    },
+];
 
 const Projects = () => {
     return (
-        <section id='projects' className="my-16 xl:mx-32 md:mx-6 mx-3">
-            <div className="w-fit px-6 py-2 border border-gray-400 rounded-lg shadow-lg">
-                <h1 className="text-4xl font-semibold">🚀 My Projects</h1>
-            </div>
-
-            <div className="container px-0 py-10 mx-auto">
-                <div className="grid grid-cols-1 gap-8 mt-8 ">
-                    {projects.map((project, index) => (
-                        <div key={index} className="overflow-hidden bg-cover rounded-lg lg:h-96 h-auto group text-white"
-                            style={{ backgroundImage: `url(${project.showImage.src})` }}>
-                            <div
-                                className="flex flex-col justify-center w-full h-full md:px-24 px-3 py-4 transition-opacity duration-700 opacity-0 backdrop-blur-sm bg-gray-800/60 group-hover:opacity-100">
-
-                                <div className='lg:space-y-3 space-y-2'>
-                                    <h2 className='md:text-2xl text-lg font-semibold'>{project.title}</h2>
-                                    <p className='md:text-base text-sm'>{project.description}</p>
+        <section id="projects" className="px-4 py-10 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-6xl">
+                <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+                    <div>
+                        <p className="text-sm font-semibold uppercase tracking-[0.32em] text-sky-200/70">Projects</p>
+                        <h2 className="mt-4 font-text-lora text-3xl text-white sm:text-4xl">Selected projects that reflect how I design, build, and ship.</h2>
+                    </div>
+                    <p className="max-w-2xl text-base leading-8 text-slate-300">
+                        These projects highlight my work across product design, frontend engineering, backend integration, and user-focused problem solving.
+                    </p>
+                </div>
+                <div className="mt-8 grid gap-6 lg:grid-cols-3">
+                    {projects.map((project) => (
+                        <article key={project.title} className="overflow-hidden rounded-[1.9rem] border border-white/10 bg-white/5 shadow-[0_20px_70px_rgba(2,8,20,0.28)]">
+                            <img src={project.showImage.src} alt={project.title} className="h-52 w-full object-cover" />
+                            <div className="p-6">
+                                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-400">Featured Project</p>
+                                <h3 className="mt-3 text-2xl font-semibold text-white">{project.title}</h3>
+                                <p className="mt-3 text-sm leading-7 text-slate-300">{project.description}</p>
+                                <div className="mt-5 flex flex-wrap gap-2">
+                                    {project.technologies.map((technology) => (
+                                        <span key={technology} className="rounded-full border border-sky-300/20 bg-sky-300/10 px-3 py-1 text-xs font-medium text-sky-50">
+                                            {technology}
+                                        </span>
+                                    ))}
                                 </div>
-
-                                <div className='flex lg:gap-32 md:gap-12 gap-6 lg:mt-6 mt-3 md:text-base text-xs'>
-                                    <div>
-                                        <h4><strong>Technologies Used:</strong></h4>
-                                        <ul className='list-disc ml-8 md:w-40 w-auto'>
-                                            {
-                                                project?.technologies?.map((technology, index) => (
-                                                    <li key={index}>{technology}</li>
-                                                ))
-                                            }
-                                        </ul>
-                                    </div>
-
-                                    <div>
-                                        <h4><strong>Main Features:</strong></h4>
-                                        <ul className='list-disc ml-8'>
-                                            {project.features.map((feature, idx) => (
-                                                <li key={idx}>{feature}</li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div className='w-fit mx-auto flex md:gap-32 gap-12 lg:mt-0 mt-6'>
-                                    <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
-                                        <button className='btn btn-sm border-none outline-none bg-[#fb7185] hover:bg-[#f8445f] text-white font-bold'>Live Demo</button>
+                                <ul className="mt-5 space-y-3 text-sm leading-7 text-slate-300">
+                                    {project.features.map((feature) => (
+                                        <li key={feature} className="rounded-2xl border border-white/10 bg-slate-950/45 px-4 py-3">
+                                            {feature}
+                                        </li>
+                                    ))}
+                                </ul>
+                                <div className="mt-6 flex gap-3">
+                                    <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" className="rounded-full bg-[linear-gradient(135deg,#9cc2ff_0%,#6ddad3_100%)] px-4 py-2 text-sm font-bold text-slate-950 transition hover:scale-[1.02]">
+                                        Live Demo
                                     </a>
-                                    
-                                    <a href={project.sourceCode} target="_blank" rel="noopener noreferrer">
-                                        <button className="btn btn-sm border-none outline-none bg-[#eea75b] hover:bg-[#f59937] text-white font-bold">Source Code</button>
+                                    <a href={project.sourceCode} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:border-sky-300/50">
+                                        Source Code
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </article>
                     ))}
                 </div>
             </div>
         </section>
     );
 };
-
-const projects = [
-    {
-        title: 'Blood Donor Unity',
-        description: 'A platform designed to connect blood donors with those in need of blood, facilitating easier and quicker donations.',
-        technologies: ['HTML', 'CSS', 'JavaScript', 'React.js', 'Node.js', 'Express.js', 'MongoDB'],
-        features: [
-            'Users can join the platform as donors by registering',
-            'Users can search for donors from the donor search page',
-            'After logging in or registering, users can create donation requests.',
-            'Logged-in users can manage their donation requests by updating or deleting them',
-        ],
-        showImage: bloodDonorImg,
-        liveDemo: 'https://blood-donator-unity.web.app/',
-        sourceCode: 'https://github.com/asif100a/Blood-Donor-Unity',
-    },
-    {
-        title: 'Assignment Genius',
-        description: 'Assignment Genius is a platform where users can interact with various assignments and they can submit their assignments.',
-        technologies: ['HTML', 'CSS', 'JavaScript', 'React', 'Tailwindcss', 'Firebase', 'React-lottie'],
-        features: [
-            'Users can browse assignments without the need to log in',
-            'Users can take assignments after logging in or registering',
-            'Logged-in users can update any assignment if needed',
-            "Users can give marks on others' submitted assignments but cannot mark their own submissions",
-        ],
-        showImage: assignmentImg,
-        liveDemo: 'https://assignment-11-9bd1a.web.app/',
-        sourceCode: 'https://github.com/asif100a/Assignment-genius',
-    },
-    {
-        title: 'Awesome Tourist Spots',
-        description: 'Awesome Tourist Spots is a user-friendly platform designed to help travelers discover and share remarkable tourist destinations worldwide.',
-        technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'React-countup', 'React-simple-typewrite', 'Swiper'],
-        features: [
-            'Provides information about various tourist spots for easy reference',
-            'Users can add a tourist spot after signing in or registering',
-            'The "All Tourist Spots" page allows users to view tourist spots without signing in',
-            'Users can find tourist spots by selecting a country name.',
-        ],
-        showImage: awesomeTouristImg,
-        liveDemo: 'https://assignment-10-49aa1.web.app/',
-        sourceCode: 'https://github.com/asif100a/Awesome-tourist-spots',
-    },
-];
 
 export default Projects;

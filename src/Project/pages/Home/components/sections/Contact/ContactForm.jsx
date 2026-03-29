@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const ContactFormProfessional = ({ form, sendEmail }) => {
+const ContactForm = ({ form, sendEmail }) => {
     return (
         <form ref={form} onSubmit={sendEmail} className="space-y-4">
             <div className="grid gap-4 md:grid-cols-2">
@@ -53,9 +53,9 @@ const ContactFormProfessional = ({ form, sendEmail }) => {
     );
 };
 
-ContactFormProfessional.propTypes = {
+ContactForm.propTypes = {
     form: PropTypes.any,
     sendEmail: PropTypes.func,
 };
 
-export default ContactFormProfessional;
+export default ContactForm;

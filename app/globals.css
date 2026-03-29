@@ -1,14 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
 @plugin "daisyui";
-@import "../src/Project/pages/Home/components/sections/About/about.css";
-@import "../src/Project/pages/Home/components/sections/Banner/banner.css";
-@import "../src/Project/pages/Home/components/sections/Banner/component/marquee.css";
-@import "../src/Project/pages/Home/components/sections/Contact/contact.css";
-@import "../src/Project/pages/Home/components/UI/downloadResume/style_download.css";
-@import "../src/Project/sharedFile/footer/footer.css";
-@import "../src/Project/sharedFile/navbar/navbar.css";
-
 @theme {
   --font-text-lora: "Fraunces", serif;
 }
