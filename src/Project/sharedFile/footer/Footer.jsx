@@ -2,7 +2,7 @@ import { CiLinkedin } from "react-icons/ci";
 import { LiaFacebook } from "react-icons/lia";
 import { MdWhatsapp } from "react-icons/md";
 import { VscGithub } from "react-icons/vsc";
-import { Link as Scroll } from "react-scroll";
+import { scrollToSection } from "../../../utils/utils";
 
 const Footer = () => {
     return (
@@ -16,16 +16,16 @@ const Footer = () => {
                     </p>
                 </div>
                 <nav className="flex flex-wrap gap-4 text-sm font-semibold text-slate-300">
-                    <Scroll to="about" smooth={true} duration={600} offset={-96} className="cursor-pointer transition hover:text-white">About</Scroll>
-                    <Scroll to="education" smooth={true} duration={600} offset={-96} className="cursor-pointer transition hover:text-white">Education</Scroll>
-                    <Scroll to="skills" smooth={true} duration={600} offset={-96} className="cursor-pointer transition hover:text-white">Skills</Scroll>
-                    <Scroll to="projects" smooth={true} duration={600} offset={-96} className="cursor-pointer transition hover:text-white">Projects</Scroll>
-                    <Scroll to="contact" smooth={true} duration={600} offset={-96} className="cursor-pointer transition hover:text-white">Contact</Scroll>
+                    <button type="button" onClick={() => scrollToSection("about")} className="cursor-pointer transition hover:text-white">About</button>
+                    <button type="button" onClick={() => scrollToSection("education")} className="cursor-pointer transition hover:text-white">Education</button>
+                    <button type="button" onClick={() => scrollToSection("skills")} className="cursor-pointer transition hover:text-white">Skills</button>
+                    <button type="button" onClick={() => scrollToSection("projects")} className="cursor-pointer transition hover:text-white">Projects</button>
+                    <button type="button" onClick={() => scrollToSection("contact")} className="cursor-pointer transition hover:text-white">Contact</button>
                 </nav>
                 <div className="flex flex-col gap-4">
                     <div className="flex gap-4">
-                        <a href="https://www.linkedin.com/in/n-m-asif-sheikh" target="_blank" rel="noreferrer" className="rounded-full border border-white/10 p-2 transition hover:border-sky-300/50 hover:text-sky-200"><CiLinkedin className="h-6 w-6" /></a>
-                        <a href="https://github.com/asif100a" target="_blank" rel="noreferrer" className="rounded-full border border-white/10 p-2 transition hover:border-sky-300/50 hover:text-sky-200"><VscGithub className="h-5 w-5" /></a>
+                        <a href="https://www.linkedin.com/in/nm-asif-sheikh" target="_blank" rel="noreferrer" className="rounded-full border border-white/10 p-2 transition hover:border-sky-300/50 hover:text-sky-200"><CiLinkedin className="h-6 w-6" /></a>
+                        <a href="https://github.com/asif100a" target="_blank" rel="noreferrer" className="rounded-full border border-white/10 p-2 px-2.5 transition hover:border-sky-300/50 hover:text-sky-200"><VscGithub className="h-5 w-5" /></a>
                         <a href="https://www.facebook.com/profile.php?id=100070024600518" target="_blank" rel="noreferrer" className="rounded-full border border-white/10 p-2 transition hover:border-sky-300/50 hover:text-sky-200"><LiaFacebook className="h-6 w-6" /></a>
                         <a href="https://wa.link/l3yb8x" target="_blank" rel="noreferrer" className="rounded-full border border-white/10 p-2 transition hover:border-sky-300/50 hover:text-sky-200"><MdWhatsapp className="h-6 w-6" /></a>
                     </div>

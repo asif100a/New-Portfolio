@@ -1,7 +1,7 @@
 import { HiArrowRight, HiOutlineBriefcase, HiOutlineEnvelope, HiOutlineSparkles } from "react-icons/hi2";
 import profilePhoto from "../../../../../../assets/asif.png";
-import { Link } from "react-scroll";
 import PropTypes from "prop-types";
+import { scrollToSection } from "../../../../../../utils/utils";
 
 const Banner = ({ sectionRef }) => {
     return (
@@ -10,12 +10,12 @@ const Banner = ({ sectionRef }) => {
                 <div className="space-y-8">
                     <div className="inline-flex items-center gap-2 rounded-full border border-sky-300/20 bg-sky-300/10 px-4 py-2 text-sm font-semibold text-sky-100">
                         <HiOutlineSparkles className="text-base" />
-                        Fullstack engineer building polished web products
+                        {"Let's"} build modern, scalable, and user-friendly Web or Mobile Apps.
                     </div>
                     <div className="space-y-5">
                         <p className="text-sm font-semibold uppercase tracking-[0.35em] text-slate-400">N.M. Asif Sheikh</p>
                         <h1 className="max-w-3xl font-text-lora text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
-                            Portfolio for a developer focused on modern, scalable product experiences.
+                            Fullstack Developer building polished Web/Mobile Apps products
                         </h1>
                         <p className="max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
                             I design and develop thoughtful digital products with React, Next.js, TypeScript, and Node.js,
@@ -23,17 +23,21 @@ const Banner = ({ sectionRef }) => {
                         </p>
                     </div>
                     <div className="flex flex-col gap-4 sm:flex-row">
-                        <Link to="projects" smooth={true} duration={600} offset={-96}>
-                            <button className="inline-flex items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#9cc2ff_0%,#6ddad3_100%)] px-6 py-3 text-sm font-bold text-slate-950 transition hover:scale-[1.02]">
-                                View Selected Work
-                                <HiArrowRight className="text-base" />
-                            </button>
-                        </Link>
-                        <Link to="contact" smooth={true} duration={600} offset={-96}>
-                            <button className="rounded-full border border-white/12 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-sky-300/50 hover:bg-white/8">
-                                Start a Conversation
-                            </button>
-                        </Link>
+                        <button
+                            type="button"
+                            onClick={() => scrollToSection("projects")}
+                            className="inline-flex items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#9cc2ff_0%,#6ddad3_100%)] px-6 py-3 text-sm font-bold text-slate-950 transition hover:scale-[1.02]"
+                        >
+                            View Selected Work
+                            <HiArrowRight className="text-base" />
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => scrollToSection("contact")}
+                            className="rounded-full border border-white/12 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-sky-300/50 hover:bg-white/8"
+                        >
+                            Start a Conversation
+                        </button>
                     </div>
                     <div ref={sectionRef} className="grid gap-4 sm:grid-cols-3">
                         <div className="rounded-3xl border border-white/10 bg-white/5 p-5">

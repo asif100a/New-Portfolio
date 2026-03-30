@@ -1,11 +1,10 @@
-import { Link } from "react-scroll";
 import { CgMenuRound } from "react-icons/cg";
-import { items } from "../../../utils/utils";
+import { items, scrollToSection } from "../../../utils/utils";
 import { useEffect, useState, useCallback } from "react";
 import PropTypes from "prop-types";
 import { RxCrossCircled } from "react-icons/rx";
 
-const Navbar = ({ isIntersecting }) => {
+const Navbar = () => {
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [showDropdown, setShowDropdown] = useState(false);
@@ -29,15 +28,16 @@ const Navbar = ({ isIntersecting }) => {
 
     const navItems = items.map((item, i) => (
         <li key={i}>
-            <Link
-                to={item.path}
-                smooth={true}
-                duration={600}
-                offset={-96}
+            <button
+                type="button"
+                onClick={() => {
+                    scrollToSection(item.path);
+                    setShowDropdown(false);
+                }}
                 className="cursor-pointer text-sm font-semibold tracking-[0.18em] text-slate-300 transition hover:text-white"
             >
-                <button onClick={() => setShowDropdown(false)}>{item.title}</button>
-            </Link>
+                {item.title}
+            </button>
         </li>
     ));
 
@@ -77,11 +77,13 @@ const Navbar = ({ isIntersecting }) => {
                         >
                             Resume
                         </a>
-                        <Link to="contact" smooth={true} duration={600} offset={-96}>
-                            <button className="rounded-full bg-[linear-gradient(135deg,#9cc2ff_0%,#6ddad3_100%)] px-5 py-2 text-sm font-bold text-slate-950 transition hover:scale-[1.02]">
-                                Contact
-                            </button>
-                        </Link>
+                        <button
+                            type="button"
+                            onClick={() => scrollToSection("contact")}
+                            className="rounded-full bg-[linear-gradient(135deg,#9cc2ff_0%,#6ddad3_100%)] px-5 py-2 text-sm font-bold text-slate-950 transition hover:scale-[1.02]"
+                        >
+                            Contact
+                        </button>
                     </div>
                 </div>
             </div>

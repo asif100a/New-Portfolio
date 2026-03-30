@@ -12,7 +12,7 @@ const responsibilities = [
 const WorkExperience = () => {
     return (
         <section id="work-experience" className="px-4 py-10 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-6xl rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-[0_20px_70px_rgba(2,8,20,0.28)] lg:p-8">
+            <div className="mx-auto max-w-6xl rounded-4xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_70px_rgba(2,8,20,0.28)] lg:p-8">
                 <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
                     <div>
                         <p className="text-sm font-semibold uppercase tracking-[0.32em] text-sky-200/70">Experience</p>
@@ -35,7 +35,7 @@ const WorkExperience = () => {
                             </div>
                             <div>
                                 <p className="text-sm uppercase tracking-[0.24em] text-slate-400">Duration</p>
-                                <p className="mt-2 text-base text-slate-200">October 10, 2024 - Present</p>
+                                <p className="mt-2 text-base text-slate-200">October 10, 2024 - April, 2025</p>
                             </div>
                             <div>
                                 <p className="text-sm uppercase tracking-[0.24em] text-slate-400">Location</p>

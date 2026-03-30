@@ -19,8 +19,20 @@ export const items = [
         path: 'work-experience',
         title: 'Work Experience'
     },
-    {
-        path: 'contact',
-        title: 'Contact'
-    },
 ];
+
+export const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+
+    if (!section) {
+        return;
+    }
+
+    const navbarOffset = 96;
+    const sectionPosition = section.getBoundingClientRect().top + window.scrollY - navbarOffset;
+
+    window.scrollTo({
+        top: sectionPosition,
+        behavior: "smooth",
+    });
+};

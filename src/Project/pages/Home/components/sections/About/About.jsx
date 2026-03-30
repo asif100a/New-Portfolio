@@ -2,6 +2,7 @@ import { useState } from "react";
 import roundImg from "../../../../../../assets/asif_round.png";
 import webDevelopmentImg from "../../../../../../assets/web-development.jpeg";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import Image from "next/image";
 
 const strengths = [
     {
@@ -25,9 +26,9 @@ const About = () => {
         <section id="about" className="px-4 py-10 sm:px-6 lg:px-8">
             <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.92fr_1.08fr]">
                 <div className="rounded-[2rem] border border-white/10 bg-white/5 p-5 shadow-[0_20px_70px_rgba(2,8,20,0.28)]">
-                    <img src={webDevelopmentImg.src} alt="Workspace and web development illustration" className="h-56 w-full rounded-[1.5rem] object-cover" />
+                    <Image src={webDevelopmentImg.src} width={500} height={200} alt="Workspace and web development illustration" className="h-56 w-full rounded-[1.5rem] object-cover" />
                     <div className="mt-5 flex items-center gap-4 rounded-[1.5rem] border border-white/10 bg-slate-950/50 p-4">
-                        <img src={roundImg.src} alt="N.M. Asif Sheikh" className="h-20 w-20 rounded-2xl object-cover" />
+                        <Image src={roundImg.src} width={80} height={80} alt="N.M. Asif Sheikh" className="h-20 w-20 rounded-full object-cover" />
                         <div>
                             <p className="text-xs uppercase tracking-[0.28em] text-slate-400">About</p>
                             <h2 className="mt-1 font-text-lora text-2xl text-white">Building dependable digital experiences</h2>
@@ -53,9 +54,9 @@ const About = () => {
                     <div className="mt-8">
                         <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)} selectedTabClassName="!border-sky-300/60 !bg-sky-300/10 !text-white">
                             <TabList className="flex flex-wrap gap-3">
-                                <Tab className="rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-slate-300">Capabilities</Tab>
-                                <Tab className="rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-slate-300">Interests</Tab>
-                                <Tab className="rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-slate-300">Collaboration</Tab>
+                                <Tab className="rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-slate-300 cursor-pointer">Capabilities</Tab>
+                                <Tab className="rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-slate-300 cursor-pointer">Interests</Tab>
+                                <Tab className="rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-slate-300 cursor-pointer">Collaboration</Tab>
                             </TabList>
                             <div className="mt-6 rounded-[1.5rem] border border-white/10 bg-slate-950/40 p-6">
                                 <TabPanel>
