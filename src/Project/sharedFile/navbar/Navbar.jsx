@@ -59,7 +59,7 @@ const Navbar = ({ isIntersecting }) => {
                             )}
                         </div>
 
-                        {!isIntersecting && <ul className="hidden items-center gap-6 lg:flex">{navItems}</ul>}
+                        <ul className="hidden items-center gap-6 lg:flex">{navItems}</ul>
 
                         <ul
                             tabIndex={0}

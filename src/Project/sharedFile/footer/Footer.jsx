@@ -10,7 +10,7 @@ const Footer = () => {
             <div className="mx-auto flex max-w-6xl flex-col gap-6 rounded-[2rem] border border-white/10 bg-slate-950/60 p-6 text-white backdrop-blur lg:flex-row lg:items-center lg:justify-between">
                 <div>
                     <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-400">N.M. Asif Sheikh</p>
-                    <h2 className="mt-2 font-text-lora text-2xl text-white">Fullstack Engineer</h2>
+                    <h2 className="mt-2 font-text-lora text-2xl text-white">Fullstack Developer</h2>
                     <p className="mt-3 max-w-xl text-sm leading-7 text-slate-300">
                         Designing thoughtful interfaces and dependable product experiences with modern web technologies.
                     </p>
