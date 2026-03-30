@@ -63,8 +63,8 @@ const Banner = ({ sectionRef }) => {
                         <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-[linear-gradient(180deg,#16263f_0%,#0e1828_100%)]">
                             <img src={profilePhoto.src} alt="N.M. Asif Sheikh" className="h-[25rem] w-full object-cover object-top" />
                         </div>
-                        <div className="mt-5 grid gap-4 sm:grid-cols-2">
-                            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                        <div className="mt-5 grid gap-4">
+                            <div className="min-w-0 rounded-2xl border border-white/10 bg-white/5 p-4">
                                 <div className="flex items-center gap-3 text-sky-200">
                                     <HiOutlineBriefcase className="text-lg" />
                                     <span className="text-sm font-semibold uppercase tracking-[0.22em]">Role</span>
@@ -72,13 +72,15 @@ const Banner = ({ sectionRef }) => {
                                 <p className="mt-3 text-lg font-semibold text-white">Fullstack Engineer Intern</p>
                                 <p className="mt-1 text-sm text-slate-300">Building real-world dashboards and business applications.</p>
                             </div>
-                            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                            <div className="min-w-0 rounded-2xl border border-white/10 bg-white/5 p-4">
                                 <div className="flex items-center gap-3 text-teal-200">
                                     <HiOutlineEnvelope className="text-lg" />
                                     <span className="text-sm font-semibold uppercase tracking-[0.22em]">Contact</span>
                                 </div>
-                                <p className="mt-3 text-lg font-semibold text-white">nmasifsheikh2003@gmail.com</p>
-                                <p className="mt-1 text-sm text-slate-300">Based in Bangladesh, collaborating globally.</p>
+                                <p className="mt-3 text-lg font-semibold text-white break-words hyphens-auto overflow-wrap-anywhere">
+                                    nmasifsheikh2003@gmail.com
+                                </p>
+                                <p className="mt-1 text-sm text-slate-300">Dhaka, Bangladesh</p>
                             </div>
                         </div>
                     </div>

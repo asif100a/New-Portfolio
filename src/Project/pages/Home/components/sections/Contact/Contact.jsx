@@ -72,7 +72,7 @@ const Contact = () => {
                                 >
                                     <h3 className="text-lg font-semibold text-white">{item.title}</h3>
                                     <p className="mt-2 text-sm leading-7 text-slate-300">{item.description}</p>
-                                    <p className="mt-4 text-sm font-semibold text-sky-100">{item.content}</p>
+                                    <p className="mt-4 text-sm font-semibold text-sky-100 overflow-hidden max-w-full">{item.content}</p>
                                 </a>
                             ))}
                         </div>
