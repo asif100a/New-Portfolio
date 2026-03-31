@@ -2,6 +2,7 @@ import { HiArrowRight, HiOutlineBriefcase, HiOutlineEnvelope, HiOutlineSparkles 
 import profilePhoto from "../../../../../../assets/asif.png";
 import PropTypes from "prop-types";
 import { scrollToSection } from "../../../../../../utils/utils";
+import Image from "next/image";
 
 const Banner = ({ sectionRef }) => {
     return (
@@ -61,7 +62,7 @@ const Banner = ({ sectionRef }) => {
                     <div className="absolute -inset-6 rounded-[2rem] bg-[linear-gradient(135deg,rgba(112,169,255,0.22),rgba(68,214,203,0.08))] blur-2xl" />
                     <div className="relative rounded-[2rem] border border-white/10 bg-slate-950/70 p-5 shadow-[0_28px_90px_rgba(3,10,24,0.45)] backdrop-blur">
                         <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-[linear-gradient(180deg,#16263f_0%,#0e1828_100%)]">
-                            <img src={profilePhoto.src} alt="N.M. Asif Sheikh" className="h-[25rem] w-full object-cover object-top" />
+                            <Image src={profilePhoto.src} width={300} height={600} alt="N.M. Asif Sheikh" className="h-104 w-full object-cover object-top" />
                         </div>
                         <div className="mt-5 grid gap-4">
                             <div className="min-w-0 rounded-2xl border border-white/10 bg-white/5 p-4">
