@@ -12,12 +12,12 @@ export const items = [
         title: 'Skills'
     },
     {
-        path: 'projects',
-        title: 'Projects'
-    },
-    {
         path: 'work-experience',
         title: 'Work Experience'
+    },
+    {
+        path: 'projects',
+        title: 'Projects'
     },
 ];
 

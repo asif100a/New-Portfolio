@@ -7,12 +7,12 @@ import { scrollToSection } from "../../../utils/utils";
 const Footer = () => {
     return (
         <footer className="px-4 pb-8 pt-2 sm:px-6 lg:px-8">
-            <div className="mx-auto flex max-w-6xl flex-col gap-6 rounded-[2rem] border border-white/10 bg-slate-950/60 p-6 text-white backdrop-blur lg:flex-row lg:items-center lg:justify-between">
+            <div className="mx-auto flex max-w-6xl flex-col gap-6 rounded-4xl border border-white/10 bg-slate-950/60 p-6 text-white backdrop-blur lg:flex-row lg:items-center lg:justify-between">
                 <div>
                     <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-400">N.M. Asif Sheikh</p>
                     <h2 className="mt-2 font-text-lora text-2xl text-white">Fullstack Developer</h2>
                     <p className="mt-3 max-w-xl text-sm leading-7 text-slate-300">
-                        Designing thoughtful interfaces and dependable product experiences with modern web technologies.
+                        Designing thoughtful interfaces and dependable product experiences with modern web technologies and mobile apps.
                     </p>
                 </div>
                 <nav className="flex flex-wrap gap-4 text-sm font-semibold text-slate-300">
