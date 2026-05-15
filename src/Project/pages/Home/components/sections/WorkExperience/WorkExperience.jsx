@@ -10,7 +10,7 @@ const experience = [
         work: [
             "Delivered frontend features for Ensinor, including course, event, book, subscription, Stripe payment, Zoom event, translation, and multi-role dashboard workflows.",
             "Built Dayf Booking interfaces for apartment discovery, location search, favorites, host onboarding, apartment management, reviews, admin workflows, language translation, and currency conversion.",
-            "Contributed to the MYNE mobile app for luxury bag tracking, collection management, wishlists, blogs, profile flows, password updates, and AI-assisted bag entry.",
+            "Contributed to the MYNE mobile app for luxury bag tracking, collection management, wishlists, profile flows, password updates, and AI-assisted bag entry.",
         ],
         stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Stripe", "Zoom", "Mobile UI"],
     },
