@@ -71,7 +71,7 @@ const Navbar = () => {
 
                     <div className="hidden lg:flex lg:items-center lg:gap-3">
                         <a
-                            href="/N.M._Asif_Sheikh_Junior_Fullstack_Engineer.pdf"
+                            href="/N.M._Asif_Sheikh_Fullstack_Dev.pdf"
                             download
                             className="rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:border-sky-300/50 hover:text-white"
                         >
