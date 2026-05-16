@@ -70,8 +70,8 @@ const Projects = () => {
             <div className="mx-auto max-w-6xl">
                 <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
                     <div>
-                        <p className="text-sm font-semibold uppercase tracking-[0.32em] text-sky-200/70">Projects</p>
-                        <h2 className="mt-4 font-text-lora text-3xl text-white sm:text-4xl">Selected product work, organized by impact and role.</h2>
+                        <p className="text-sm font-semibold uppercase tracking-[0.32em] text-sky-200/70">Featured Fullstack Projects</p>
+                        <h2 className="mt-4 font-text-lora text-3xl text-white sm:text-4xl">Selected full-stack product work, organized by impact and role.</h2>
                     </div>
                     <p className="max-w-2xl text-base leading-8 text-slate-300">
                         A focused mix of professional product contributions and personal full-stack builds, showing how I handle dashboards, commerce flows, booking systems, mobile UX, and real user workflows.

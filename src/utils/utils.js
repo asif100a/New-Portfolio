@@ -12,8 +12,12 @@ export const items = [
         title: 'Skills'
     },
     {
+        path: 'backend-architecture',
+        title: 'Backend'
+    },
+    {
         path: 'work-experience',
-        title: 'Work Experience'
+        title: 'Experience'
     },
     {
         path: 'projects',

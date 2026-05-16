@@ -51,8 +51,8 @@ const WorkExperience = () => {
             <div className="mx-auto max-w-6xl">
                 <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
                     <div>
-                        <p className="text-sm font-semibold uppercase tracking-[0.32em] text-sky-200/70">Experience</p>
-                        <h2 className="mt-4 font-text-lora text-3xl text-white sm:text-4xl">Professional experience shaped around product delivery.</h2>
+                        <p className="text-sm font-semibold uppercase tracking-[0.32em] text-sky-200/70">Production Experience</p>
+                        <h2 className="mt-4 font-text-lora text-3xl text-white sm:text-4xl">Professional experience shaped around production delivery.</h2>
                     </div>
                     <p className="max-w-2xl text-base leading-8 text-slate-300">
                         A clearer look at where I have worked, what I owned, and the kinds of products I have helped build across frontend, mobile, and full-stack responsibilities.

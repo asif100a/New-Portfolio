@@ -4,6 +4,7 @@ import { useInterSectionObserver } from "../../../hooks/useIntersectionObserver"
 import Footer from "../../sharedFile/footer/Footer";
 import Navbar from "../../sharedFile/navbar/Navbar";
 import About from "./components/sections/About/About";
+import BackendArchitecture from "./components/sections/BackendArchitecture/BackendArchitecture";
 import Banner from "./components/sections/Banner/Banner";
 import Contact from "./components/sections/Contact/Contact";
 import Education from "./components/sections/Education/Education";
@@ -24,6 +25,7 @@ const Home = () => {
                 <About />
                 <Education />
                 <Skills />
+                <BackendArchitecture />
                 <WorkExperience />
                 <Projects />
                 <Contact />
