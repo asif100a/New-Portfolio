@@ -1,3 +1,5 @@
+import { MotionCard, StaggerGroup } from "../../animations/Motion";
+
 const architectureGroups = [
     {
         title: "API Development",
@@ -35,9 +37,9 @@ const BackendArchitecture = () => {
                     </p>
                 </div>
 
-                <div className="mt-10 grid gap-5 lg:grid-cols-2">
+                <StaggerGroup className="mt-10 grid gap-5 lg:grid-cols-2">
                     {architectureGroups.map((group) => (
-                        <article key={group.title} className="rounded-[1.75rem] border border-white/10 bg-slate-950/45 p-6 shadow-[0_20px_70px_rgba(2,8,20,0.24)]">
+                        <MotionCard key={group.title} as="article" className="rounded-[1.75rem] border border-white/10 bg-slate-950/45 p-6 shadow-[0_20px_70px_rgba(2,8,20,0.24)]">
                             <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                                 <div>
                                     <h3 className="text-2xl font-semibold text-white">{group.title}</h3>
@@ -55,9 +57,9 @@ const BackendArchitecture = () => {
                                     </li>
                                 ))}
                             </ul>
-                        </article>
+                        </MotionCard>
                     ))}
-                </div>
+                </StaggerGroup>
             </div>
         </section>
     );

@@ -1,3 +1,5 @@
+import { MotionCard, StaggerGroup } from "../../animations/Motion";
+
 const experience = [
     {
         company: "Sparktech Agency",
@@ -62,21 +64,21 @@ const WorkExperience = () => {
                 <div className="mt-10 grid gap-6 lg:grid-cols-[0.72fr_1.28fr]">
                     <aside className="rounded-[1.75rem] border border-white/10 bg-white/[0.06] p-6 shadow-[0_20px_70px_rgba(2,8,20,0.24)]">
                         <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-400">Core Strengths</p>
-                        <div className="mt-6 grid gap-4">
+                        <StaggerGroup className="mt-6 grid gap-4">
                             {capabilityCards.map((card) => (
-                                <div key={card.title} className="border-l border-sky-300/30 pl-4">
+                                <MotionCard key={card.title} className="border-l border-sky-300/30 pl-4">
                                     <h3 className="text-lg font-semibold text-white">{card.title}</h3>
                                     <p className="mt-2 text-sm leading-7 text-slate-300">{card.text}</p>
-                                </div>
+                                </MotionCard>
                             ))}
-                        </div>
+                        </StaggerGroup>
                     </aside>
 
                     <div className="relative">
                         <div className="absolute left-4 top-3 hidden h-[calc(100%-1.5rem)] w-px bg-white/10 sm:block" />
-                        <div className="grid gap-6">
+                        <StaggerGroup className="grid gap-6">
                             {experience.map((item) => (
-                                <article key={item.company} className="relative rounded-[1.75rem] border border-white/10 bg-slate-950/45 p-6 shadow-[0_20px_70px_rgba(2,8,20,0.22)] sm:ml-10">
+                                <MotionCard key={item.company} as="article" className="relative rounded-[1.75rem] border border-white/10 bg-slate-950/45 p-6 shadow-[0_20px_70px_rgba(2,8,20,0.22)] sm:ml-10">
                                     <span className="absolute -left-[2.95rem] top-8 hidden h-4 w-4 rounded-full border border-sky-200/70 bg-sky-300 shadow-[0_0_24px_rgba(125,211,252,0.45)] sm:block" />
                                     <div className="flex flex-col gap-4 xl:flex-row xl:items-start xl:justify-between">
                                         <div>
@@ -106,13 +108,13 @@ const WorkExperience = () => {
                                     <div className="mt-6 flex flex-wrap gap-2">
                                         {item.stack.map((technology) => (
                                             <span key={technology} className="rounded-full border border-sky-300/20 bg-sky-300/10 px-3 py-1 text-xs font-medium text-sky-50">
-                                                {technology}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </article>
+                                            {technology}
+                                        </span>
+                                    ))}
+                                </div>
+                                </MotionCard>
                             ))}
-                        </div>
+                        </StaggerGroup>
                     </div>
                 </div>
             </div>

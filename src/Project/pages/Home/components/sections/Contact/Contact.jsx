@@ -2,6 +2,7 @@ import { useRef } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import emailjs from "@emailjs/browser";
 import ContactForm from "./ContactForm";
+import { MotionCard, StaggerGroup } from "../../animations/Motion";
 
 const contacts = [
     {
@@ -61,9 +62,10 @@ const Contact = () => {
                         <p className="mt-4 max-w-xl text-base leading-8 text-slate-300">
                             I&apos;m open to new opportunities, freelance collaborations, and product-focused conversations. Reach out through the form or connect through the channels below.
                         </p>
-                        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                        <StaggerGroup className="mt-8 grid gap-4 sm:grid-cols-2">
                             {contacts.map((item) => (
-                                <a
+                                <MotionCard
+                                    as="a"
                                     key={item.title}
                                     href={item.href}
                                     target="_blank"
@@ -73,9 +75,9 @@ const Contact = () => {
                                     <h3 className="text-lg font-semibold text-white">{item.title}</h3>
                                     <p className="mt-2 text-sm leading-7 text-slate-300">{item.description}</p>
                                     <p className="mt-4 text-sm font-semibold text-sky-100 overflow-hidden max-w-full">{item.content}</p>
-                                </a>
+                                </MotionCard>
                             ))}
-                        </div>
+                        </StaggerGroup>
                     </div>
                     <div className="rounded-[1.75rem] border border-white/10 bg-slate-950/45 p-4 md:p-6">
                         <ContactForm form={form} sendEmail={sendEmail} />

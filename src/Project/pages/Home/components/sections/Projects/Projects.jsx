@@ -5,6 +5,7 @@ import dayfBookingImg from "../../../../../../assets/projects/dayf_booking.png";
 import ensinorImg from "../../../../../../assets/projects/ensinor.png";
 import myneCollectionsImg from "../../../../../../assets/projects/myne_collections.png";
 import myneHomeImg from "../../../../../../assets/projects/myne_home.png";
+import { MotionCard, StaggerGroup } from "../../animations/Motion";
 
 const featuredProjects = [
     {
@@ -78,9 +79,10 @@ const Projects = () => {
                     </p>
                 </div>
 
-                <div className="mt-10 grid gap-6">
+                <StaggerGroup className="mt-10 grid gap-6">
                     {featuredProjects.map((project, index) => (
-                        <article
+                        <MotionCard
+                            as="article"
                             key={project.title}
                             className="grid overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/6 shadow-[0_20px_70px_rgba(2,8,20,0.28)] lg:grid-cols-[1.08fr_0.92fr]"
                         >
@@ -119,9 +121,9 @@ const Projects = () => {
                                     ))}
                                 </ul>
                             </div>
-                        </article>
+                        </MotionCard>
                     ))}
-                </div>
+                </StaggerGroup>
 
                 <div className="mt-10">
                     <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
@@ -130,9 +132,9 @@ const Projects = () => {
                             <h3 className="mt-2 text-2xl font-semibold text-white">Full-stack projects with live demos and source code.</h3>
                         </div>
                     </div>
-                    <div className="mt-6 grid gap-5 lg:grid-cols-3">
+                    <StaggerGroup className="mt-6 grid gap-5 lg:grid-cols-3">
                         {personalProjects.map((project) => (
-                            <article key={project.title} className="flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/5">
+                            <MotionCard key={project.title} as="article" className="flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/5">
                                 <img src={project.image.src} alt={`${project.title} preview`} className="h-48 w-full object-cover object-top" />
                                 <div className="flex flex-1 flex-col p-5">
                                     <h4 className="text-xl font-semibold text-white">{project.title}</h4>
@@ -153,9 +155,9 @@ const Projects = () => {
                                         </a>
                                     </div>
                                 </div>
-                            </article>
+                            </MotionCard>
                         ))}
-                    </div>
+                    </StaggerGroup>
                 </div>
             </div>
         </section>

@@ -4,6 +4,7 @@ import { useInterSectionObserver } from "../../../hooks/useIntersectionObserver"
 import Footer from "../../sharedFile/footer/Footer";
 import Navbar from "../../sharedFile/navbar/Navbar";
 import About from "./components/sections/About/About";
+import { PageReveal } from "./components/animations/Motion";
 import BackendArchitecture from "./components/sections/BackendArchitecture/BackendArchitecture";
 import Banner from "./components/sections/Banner/Banner";
 import Contact from "./components/sections/Contact/Contact";
@@ -22,13 +23,27 @@ const Home = () => {
                 <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-152 bg-[radial-gradient(circle_at_top,rgba(94,145,255,0.18),transparent_48%)]" />
                 <div className="pointer-events-none absolute left-1/2 top-104 -z-10 h-80 w-80 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-3xl" />
                 <Banner sectionRef={sectionRef} />
-                <About />
-                <Education />
-                <Skills />
-                <BackendArchitecture />
-                <WorkExperience />
-                <Projects />
-                <Contact />
+                <PageReveal>
+                    <About />
+                </PageReveal>
+                <PageReveal>
+                    <Education />
+                </PageReveal>
+                <PageReveal>
+                    <Skills />
+                </PageReveal>
+                <PageReveal>
+                    <BackendArchitecture />
+                </PageReveal>
+                <PageReveal>
+                    <WorkExperience />
+                </PageReveal>
+                <PageReveal>
+                    <Projects />
+                </PageReveal>
+                <PageReveal>
+                    <Contact />
+                </PageReveal>
             </main>
             <Footer />
         </div>

@@ -3,17 +3,22 @@ import profilePhoto from "../../../../../../assets/asif.png";
 import PropTypes from "prop-types";
 import { scrollToSection } from "../../../../../../utils/utils";
 import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
+import { MotionCard, MotionItem, PageReveal, StaggerGroup } from "../../animations/Motion";
 
 const Banner = ({ sectionRef }) => {
+    const prefersReducedMotion = useReducedMotion();
+    const ProfileCard = prefersReducedMotion ? "div" : motion.div;
+
     return (
         <section className="px-4 pb-10 pt-28 sm:px-6 lg:px-8 lg:pt-36">
             <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
-                <div className="space-y-8">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-sky-300/20 bg-sky-300/10 px-4 py-2 text-sm font-semibold text-sky-100">
+                <StaggerGroup className="space-y-8">
+                    <MotionItem className="inline-flex items-center gap-2 rounded-full border border-sky-300/20 bg-sky-300/10 px-4 py-2 text-sm font-semibold text-sky-100">
                         <HiOutlineSparkles className="text-base" />
                         {"Let's"} build modern, scalable, and user-friendly Web or Mobile Apps.
-                    </div>
-                    <div className="space-y-5">
+                    </MotionItem>
+                    <MotionItem className="space-y-5">
                         <p className="text-sm font-semibold uppercase tracking-[0.35em] text-slate-400">N.M. Asif Sheikh</p>
                         <h1 className="max-w-3xl font-text-lora text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
                             Fullstack Developer building polished Web/Mobile Apps products
@@ -22,8 +27,8 @@ const Banner = ({ sectionRef }) => {
                             I design and develop thoughtful digital products with React, Next.js, TypeScript, and Node.js,
                             combining clean frontend execution with dependable backend architecture.
                         </p>
-                    </div>
-                    <div className="flex flex-col gap-4 sm:flex-row">
+                    </MotionItem>
+                    <MotionItem className="flex flex-col gap-4 sm:flex-row">
                         <button
                             type="button"
                             onClick={() => scrollToSection("projects")}
@@ -39,28 +44,36 @@ const Banner = ({ sectionRef }) => {
                         >
                             Start a Conversation
                         </button>
-                    </div>
+                    </MotionItem>
                     <div ref={sectionRef} className="grid gap-4 sm:grid-cols-3">
-                        <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                        <MotionCard className="rounded-3xl border border-white/10 bg-white/5 p-5">
                             <p className="text-xs uppercase tracking-[0.28em] text-slate-400">Experience</p>
                             <p className="mt-3 text-2xl font-extrabold text-white">1+ year</p>
                             <p className="mt-1 text-sm text-slate-300">Production-focused fullstack delivery</p>
-                        </div>
-                        <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                        </MotionCard>
+                        <MotionCard className="rounded-3xl border border-white/10 bg-white/5 p-5">
                             <p className="text-xs uppercase tracking-[0.28em] text-slate-400">Focus</p>
                             <p className="mt-3 text-2xl font-extrabold text-white">Next.js</p>
                             <p className="mt-1 text-sm text-slate-300">App architecture, UI systems, and APIs</p>
-                        </div>
-                        <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                        </MotionCard>
+                        <MotionCard className="rounded-3xl border border-white/10 bg-white/5 p-5">
                             <p className="text-xs uppercase tracking-[0.28em] text-slate-400">Availability</p>
                             <p className="mt-3 text-2xl font-extrabold text-white">Open</p>
                             <p className="mt-1 text-sm text-slate-300">Remote collaboration and freelance work</p>
-                        </div>
+                        </MotionCard>
                     </div>
-                </div>
-                <div className="relative">
-                    <div className="absolute -inset-6 rounded-[2rem] bg-[linear-gradient(135deg,rgba(112,169,255,0.22),rgba(68,214,203,0.08))] blur-2xl" />
-                    <div className="relative rounded-[2rem] border border-white/10 bg-slate-950/70 p-5 shadow-[0_28px_90px_rgba(3,10,24,0.45)] backdrop-blur">
+                </StaggerGroup>
+                <PageReveal className="relative">
+                    <motion.div
+                        className="absolute -inset-6 rounded-[2rem] bg-[linear-gradient(135deg,rgba(112,169,255,0.22),rgba(68,214,203,0.08))] blur-2xl"
+                        animate={prefersReducedMotion ? undefined : { opacity: [0.65, 1, 0.65], scale: [1, 1.04, 1] }}
+                        transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+                    />
+                    <ProfileCard
+                        className="relative rounded-[2rem] border border-white/10 bg-slate-950/70 p-5 shadow-[0_28px_90px_rgba(3,10,24,0.45)] backdrop-blur"
+                        animate={prefersReducedMotion ? undefined : { y: [0, -8, 0] }}
+                        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                    >
                         <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-[linear-gradient(180deg,#16263f_0%,#0e1828_100%)]">
                             <Image src={profilePhoto.src} width={300} height={600} alt="N.M. Asif Sheikh" className="h-104 w-full object-cover object-top" />
                         </div>
@@ -84,8 +97,8 @@ const Banner = ({ sectionRef }) => {
                                 <p className="mt-1 text-sm text-slate-300">Dhaka, Bangladesh</p>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </ProfileCard>
+                </PageReveal>
             </div>
         </section>
     );
