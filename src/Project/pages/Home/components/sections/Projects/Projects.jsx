@@ -86,14 +86,18 @@ const Projects = () => {
                         >
                             <div className={`${index % 2 === 1 ? "lg:order-2" : ""} bg-slate-950/55 p-3`}>
                                 <div className="relative h-72 overflow-hidden rounded-[1.25rem] border border-white/10 bg-slate-900 sm:h-96">
-                                    <img src={project.image.src} alt={`${project.title} project preview`} className="h-full w-full object-fill object-top" />
                                     {project.secondaryImage ? (
-                                        <img
-                                            src={project.secondaryImage.src}
-                                            alt={`${project.title} collection preview`}
-                                            className="absolute bottom-4 right-4 hidden h-44 w-24 rounded-2xl border border-white/20 object-cover object-top shadow-[0_18px_50px_rgba(0,0,0,0.45)] sm:block"
-                                        />
-                                    ) : null}
+                                        <div className="grid h-full grid-cols-2 gap-3 bg-slate-950/55 p-3">
+                                            <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-950/75">
+                                                <img src={project.image.src} alt={`${project.title} home preview`} className="h-full w-full object-contain object-top" />
+                                            </div>
+                                            <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-950/75">
+                                                <img src={project.secondaryImage.src} alt={`${project.title} collection preview`} className="h-full w-full object-contain object-top" />
+                                            </div>
+                                        </div>
+                                    ) : (
+                                        <img src={project.image.src} alt={`${project.title} project preview`} className="h-full w-full object-fill object-top" />
+                                    )}
                                 </div>
                             </div>
                             <div className="flex flex-col justify-center p-6 sm:p-8">

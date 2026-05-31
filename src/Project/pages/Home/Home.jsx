@@ -19,8 +19,8 @@ const Home = () => {
         <div className="overflow-hidden">
             <Navbar isIntersecting={isIntersecting} />
             <main className="relative">
-                <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[38rem] bg-[radial-gradient(circle_at_top,rgba(94,145,255,0.18),transparent_48%)]" />
-                <div className="pointer-events-none absolute left-1/2 top-[26rem] -z-10 h-80 w-80 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-3xl" />
+                <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-152 bg-[radial-gradient(circle_at_top,rgba(94,145,255,0.18),transparent_48%)]" />
+                <div className="pointer-events-none absolute left-1/2 top-104 -z-10 h-80 w-80 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-3xl" />
                 <Banner sectionRef={sectionRef} />
                 <About />
                 <Education />
