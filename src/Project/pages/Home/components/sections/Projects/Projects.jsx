@@ -5,9 +5,32 @@ import dayfBookingImg from "../../../../../../assets/projects/dayf_booking.png";
 import ensinorImg from "../../../../../../assets/projects/ensinor.png";
 import myneCollectionsImg from "../../../../../../assets/projects/myne_collections.png";
 import myneHomeImg from "../../../../../../assets/projects/myne_home.png";
+import siteSource1Img from "../../../../../../assets/projects/site_source1.png";
+import siteSource2Img from "../../../../../../assets/projects/site_source2.png";
+import siteSource3Img from "../../../../../../assets/projects/site_source3.png";
 import { MotionCard, StaggerGroup } from "../../animations/Motion";
 
 const featuredProjects = [
+    {
+        title: "Site Source",
+        category: "Workforce Marketplace App",
+        image: siteSource1Img,
+        galleryImages: [siteSource1Img, siteSource2Img, siteSource3Img],
+        description:
+            "A cross-platform workforce app built with Expo and React Native, sharing one codebase across mobile and web. The product supports Worker and Employer roles for hour-based daily jobs, offers, applications, timesheets, approvals, search, and worker reviews.",
+        technologies: ["Expo", "React Native", "Mobile App", "Web App", "Role-based UX"],
+        highlights: ["Worker job search, offers, applications, and timesheets", "Employer job posting, worker search, offers, and approvals", "Shared Expo codebase for mobile and web"],
+    },
+    {
+        title: "MYNE",
+        category: "Luxury Bag Mobile App",
+        image: myneHomeImg,
+        secondaryImage: myneCollectionsImg,
+        description:
+            "A luxury fashion bag app for tracking bag values, managing personal collections and wishlists, reading brand-focused content, and using AI-assisted bag entry for richer collection management.",
+        technologies: ["Mobile App", "Product UI", "AI-assisted flows", "Collection Tracking"],
+        highlights: ["Collection and wishlist management", "AI-assisted bag entry", "Price and value tracking"],
+    },
     {
         title: "Ensinor",
         category: "Learning Platform",
@@ -25,16 +48,6 @@ const featuredProjects = [
             "A booking experience where users can discover apartments, search by location, save favorites, review properties, become hosts, and manage listings through a connected admin workflow.",
         technologies: ["Next.js", "React", "Tailwind CSS", "Google Translate", "Currency API"],
         highlights: ["Host and guest flows", "Admin management panel", "Multi-language and multi-currency support"],
-    },
-    {
-        title: "MYNE",
-        category: "Luxury Bag Mobile App",
-        image: myneHomeImg,
-        secondaryImage: myneCollectionsImg,
-        description:
-            "A luxury fashion bag app for tracking bag values, managing personal collections and wishlists, reading brand-focused content, and using AI-assisted bag entry for richer collection management.",
-        technologies: ["Mobile App", "Product UI", "AI-assisted flows", "Collection Tracking"],
-        highlights: ["Collection and wishlist management", "AI-assisted bag entry", "Price and value tracking"],
     },
 ];
 
@@ -88,7 +101,15 @@ const Projects = () => {
                         >
                             <div className={`${index % 2 === 1 ? "lg:order-2" : ""} bg-slate-950/55 p-3`}>
                                 <div className="relative h-72 overflow-hidden rounded-[1.25rem] border border-white/10 bg-slate-900 sm:h-96">
-                                    {project.secondaryImage ? (
+                                    {project.galleryImages ? (
+                                        <div className="grid h-full grid-cols-3 gap-2 bg-slate-950/55 p-2 sm:gap-3 sm:p-3">
+                                            {project.galleryImages.map((image, imageIndex) => (
+                                                <div key={`${project.title}-screen-${imageIndex + 1}`} className="overflow-hidden rounded-2xl border border-white/10 bg-slate-950/75">
+                                                    <img src={image.src} alt={`${project.title} app screen ${imageIndex + 1}`} className="h-full w-full object-contain object-top" />
+                                                </div>
+                                            ))}
+                                        </div>
+                                    ) : project.secondaryImage ? (
                                         <div className="grid h-full grid-cols-2 gap-3 bg-slate-950/55 p-3">
                                             <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-950/75">
                                                 <img src={project.image.src} alt={`${project.title} home preview`} className="h-full w-full object-contain object-top" />
